@@ -12,6 +12,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: "Guide", link: "/guide/getting-started" },
+      { text: "Components", link: "/components/" },
       { text: "Reference", link: "/reference/exports" },
     ],
     sidebar: {
@@ -21,6 +22,19 @@ export default defineConfig({
           items: [
             { text: "Getting started", link: "/guide/getting-started" },
             { text: "Styling", link: "/guide/styling" },
+          ],
+        },
+      ],
+      "/components/": [
+        {
+          text: "Components",
+          items: [
+            { text: "Overview", link: "/components/" },
+            { text: "Form fields", link: "/components/form-fields" },
+            { text: "Primitives", link: "/components/primitives" },
+            { text: "Root components", link: "/components/root-components" },
+            { text: "Charts", link: "/components/charts" },
+            { text: "Workflows and providers", link: "/components/workflows" },
           ],
         },
       ],

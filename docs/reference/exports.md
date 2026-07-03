@@ -1,46 +1,90 @@
 # Exports reference
 
-## Root entrypoint
+This page is the shortest path to the right import.
 
-`@medram/ui` re-exports the most commonly reused fields and components:
+## Entry points
 
-- Field surface including `BasicImageUploaderField`, `DatePickerField`, `DateRangePickerField`, `InputField`, `MultiCheckBoxInputField`, `MultiSelectField`, `RadioGroupField`, `SelectField`, and `UploadField`.
-- Shared components such as `AlertBox`, `AttachmentsPreview`, `Avatar`, `CardBox`, `CopyableButton`, `LoadingSection`, `ModalBox`, `Pagination`, `SubmitButton`, `Tabs`, `WizardCard`, and `WizardCompletion`.
-- `WebcamImageUploader` for the uploader flow.
-- Shared types from `src/types.ts`.
+| Import path | Use it for | Best follow-up page |
+| --- | --- | --- |
+| `@medram/ui` | Convenience barrel for commonly reused fields and app-ready widgets | [Root components](/components/root-components) |
+| `@medram/ui/primitives` | shadcn/Radix-style low-level building blocks | [Primitives](/components/primitives) |
+| `@medram/ui/fields` | Formik-ready fields, upload inputs, and field helpers | [Form fields](/components/form-fields) |
+| `@medram/ui/charts` | Lazy-loaded Recharts wrappers | [Charts](/components/charts) |
+| `@medram/ui/modal` | Stacked modal provider, hooks, and modal helpers | [Workflows and providers](/components/workflows) |
+| `@medram/ui/wizard` | Wizard orchestration and wizard types | [Workflows and providers](/components/workflows) |
+| `@medram/ui/webcam` | Webcam capture and upload flows | [Workflows and providers](/components/workflows) |
+| `@medram/ui/time-picker` | Standalone time input controls | [Workflows and providers](/components/workflows) |
+| `@medram/ui/cloud-storage` | Upload provider contract and hooks | [Cloud storage reference](/reference/cloud-storage) |
+| `@medram/ui/tailwind` | Tailwind preset | [Styling](/guide/styling) |
+| `@medram/ui/styles.css` | Shared design-token stylesheet | [Styling](/guide/styling) |
 
-The root barrel also preserves the historical `DropdownBox` alias by mapping it to `DropdownBoxField`.
+## Root barrel highlights
 
-## Subpath entrypoints
+The root barrel intentionally prioritizes convenience over perfect modularity.
 
-### `@medram/ui/primitives`
+### Re-exported field components
 
-Vendored shadcn primitives including accordion, alert, avatar, badge, button, calendar, card, chart, checkbox, dialog, dropdown menu, input, label, popover, radio group, select, separator, sheet, switch, table, tabs, textarea, and tooltip.
+- `BasicImageUploaderField`
+- `DatePickerField`
+- `DateRangePickerField`
+- `InputField`
+- `MultiCheckBoxInputField`
+- `MultiSelectField`
+- `RadioGroupField`
+- `SelectField`
+- `UploadField`
+- `DropdownBox` → alias of `DropdownBoxField`
 
-### `@medram/ui/fields`
+### Root-only app helpers
 
-Formik-oriented field wrappers and reusable inputs including combo boxes, drop zones, select inputs, upload inputs, date and time fields, checkbox variants, and attachment helpers.
+- `AlertBox`
+- `AttachmentsPreview`
+- `Avatar`
+- `BaseSelect`
+- `CalendarDatePicker`
+- `CardBox`
+- `CheckInHeatmap`
+- `CopyableButton`
+- `CustomBadge`
+- `DotPattern`
+- `DropDownButtons`
+- `FlikeringGrid`
+- `FormError`
+- `FullScreenLoading`
+- `gradientSeparator`
+- `Help`
+- `ImagePreview`
+- `Loader`
+- `LoadingSection`
+- `ModalBox`
+- `MultiStep`
+- `NumberTicker`
+- `OverviewBox`
+- `Pagination`
+- `PDFPreview`
+- `Select`
+- `SheetBox`
+- `SubmitButton`
+- `Tabs`
+- `VerticalTabs`
+- `WebcamImageUploader`
+- `WizardCard`
+- `WizardCompletion`
 
-### `@medram/ui/charts`
+## High-signal shared types
 
-Area, bar, line, pie, radar, and stacked bar chart wrappers plus `BaseChartCard`.
+| Export | Where it helps |
+| --- | --- |
+| `SelectOptions<T>` | Typed option arrays for select-based fields and helpers |
+| `CloudStorageContextValue` | Typing your upload provider implementation |
+| `UploadFileOptions` | Progress-aware upload callbacks |
+| `TabNavItem` | Root `Tabs` and `VerticalTabs` configuration |
+| `WizardItem` | `WizardCard` and route-like wizard entry lists |
+| `AttachmentDto` | Uploads, previews, and webcam flows |
+| `DateRangeYupSchema` | Yup validation for date range fields |
 
-### `@medram/ui/modal`
+## Need help choosing?
 
-The stacked modal system exports the modal context, guard utilities, and hook helpers.
-
-### `@medram/ui/wizard`
-
-Exports `BaseWizard`, `Wizard`, `useWizardContext`, and the shared wizard types.
-
-### `@medram/ui/webcam`
-
-Exports image upload card, webcam capture, webcam modal, and the webcam image uploader.
-
-### `@medram/ui/time-picker`
-
-Exports the time picker surface.
-
-### `@medram/ui/cloud-storage`
-
-Exports `CloudStorageProvider`, `useCloudStorageContext`, and the provider types used by upload-aware components.
+- Building a form? Start with [Form fields](/components/form-fields).
+- Building a dashboard card or page widget? Start with [Root components](/components/root-components).
+- Building a custom layout from scratch? Start with [Primitives](/components/primitives).

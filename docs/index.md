@@ -4,34 +4,54 @@ title: "@medram/ui"
 titleTemplate: false
 hero:
   name: "@medram/ui"
-  text: Reusable shadcn/ui building blocks for React and Next.js
-  tagline: Component primitives, form fields, charts, modal and wizard helpers, webcam upload flows, and shared design tokens.
+  text: A practical React UI kit for product teams
+  tagline: Shadcn-style primitives, Formik-ready fields, charts, wizard flows, upload tooling, and dashboard helpers in one package.
   actions:
     - theme: brand
+      text: Browse components
+      link: /components/
+    - theme: alt
       text: Get started
       link: /guide/getting-started
-    - theme: alt
-      text: API reference
-      link: /reference/exports
 features:
-  - title: Broad surface area
-    details: Root exports cover the commonly reused components, while focused subpaths keep larger feature areas isolated.
-  - title: Tailwind-ready
-    details: The package ships a Tailwind preset and CSS tokens so host apps can adopt the same design system quickly.
-  - title: Integration helpers
-    details: Upload, attachment, and webcam flows share a cloud storage context instead of requiring app-specific wiring in every component.
+  - title: Ship forms faster
+    details: Use the Formik-ready field layer for labels, help text, validation feedback, date/time pickers, uploads, and image workflows.
+  - title: Stay close to the metal
+    details: Drop down to themed primitives whenever you want direct control over cards, dialogs, tabs, sheets, tables, and low-level form inputs.
+  - title: Solve real app flows
+    details: The package includes stacked modals, multi-step wizards, webcam capture, upload provider wiring, and chart wrappers for dashboard work.
 ---
 
-## Included modules
+## Pick your starting point
 
-- `@medram/ui` for the root barrel.
-- `@medram/ui/primitives` for vendored shadcn primitives.
-- `@medram/ui/fields` for Formik-oriented inputs and field wrappers.
-- `@medram/ui/charts` for Recharts wrappers.
-- `@medram/ui/modal` for the stacked modal system.
-- `@medram/ui/wizard` for wizard state and navigation.
-- `@medram/ui/webcam` for webcam capture and upload helpers.
-- `@medram/ui/time-picker` for the time picker surface.
-- `@medram/ui/cloud-storage` for upload context wiring.
+| If you are building | Go here |
+| --- | --- |
+| A form or settings screen | [Form fields](/components/form-fields) |
+| A custom screen layout | [Primitives](/components/primitives) |
+| A dashboard card or app widget | [Root components](/components/root-components) |
+| A data visualization | [Charts](/components/charts) |
+| A modal, wizard, upload, or camera flow | [Workflows and providers](/components/workflows) |
 
-Start with the [getting started guide](/guide/getting-started), then use the [exports reference](/reference/exports) to pick the correct entrypoint.
+## Public entrypoints
+
+- `@medram/ui`
+- `@medram/ui/primitives`
+- `@medram/ui/fields`
+- `@medram/ui/charts`
+- `@medram/ui/modal`
+- `@medram/ui/wizard`
+- `@medram/ui/webcam`
+- `@medram/ui/time-picker`
+- `@medram/ui/cloud-storage`
+- `@medram/ui/tailwind`
+- `@medram/ui/styles.css`
+
+## Friendly rules of thumb
+
+::: tip
+- Reach for `@medram/ui/fields` when you want Formik wiring done for you.
+- Reach for `@medram/ui/primitives` when you want control over composition.
+- Reach for the root barrel when a ready-made widget already fits the screen.
+:::
+
+Start with the [component guide](/components/) if you want the fastest path from requirement to import.
