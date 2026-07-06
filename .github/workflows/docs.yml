@@ -30,8 +30,6 @@ jobs:
           package-manager-cache: false
 
       - uses: pnpm/action-setup@v6
-        with:
-          version: 11
 
       - name: Enable Corepack
         run: corepack enable
