@@ -1,3 +1,4 @@
+import { Fragment } from "react"
 import Help from "../components/Help"
 import { cn } from "../lib/cn"
 import { Label } from "../primitives/label"
@@ -66,23 +67,25 @@ export function SpecialSelectField<T>({
       {errorMessage && <p className="text-red-500 text-sm my-1">{errorMessage}</p>}
 
       <div className={cn("flex flex-col gap-2", itemContainerClassName)}>
-        {options.map((option) =>
-          render({
-            option,
-            disabled,
-            selected: selectedItem === option,
-            onClick: () => {
-              if (disabled) return
-              if (selectedItem === option) {
-                onChange?.(null)
-                onSelect?.(null)
-              } else {
-                onChange?.(option)
-                onSelect?.(option)
-              }
-            },
-          }),
-        )}
+        {options.map((option, index) => (
+          <Fragment key={index}>
+            {render({
+              option,
+              disabled,
+              selected: selectedItem === option,
+              onClick: () => {
+                if (disabled) return
+                if (selectedItem === option) {
+                  onChange?.(null)
+                  onSelect?.(null)
+                } else {
+                  onChange?.(option)
+                  onSelect?.(option)
+                }
+              },
+            })}
+          </Fragment>
+        ))}
       </div>
 
       {help && <Help>{help}</Help>}
